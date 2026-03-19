@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lassi Downloader ⚡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Lassi Downloader ⚡</h1>
+
+  <input id="url" oninput="fetchInfo()" placeholder="Paste YouTube link here..." />
+
+  <div class="buttons">
+    <button onclick="downloadVideo()">🎬 Download Video</button>
+    <button onclick="downloadAudio()">🎵 Download MP3</button>
+  </div>
+
+  <div id="preview"></div>
+
+</div>
+
+<!-- 🔥 FOOTER + QR -->
+<footer style="margin-top:80px; text-align:center;">
+
+  <h3>Powered by khatti lassi ⚡</h3>
+
+  <div style="margin-top:20px;">
+    <p style="font-size:18px;">🥤 Buy me a Lassi ❤️</p>
+
+    <img src="qr.png" width="260"
+    style="border-radius:12px; background:white; padding:10px;" />
+
+    <p style="opacity:0.6;">Scan & support 💰</p>
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
