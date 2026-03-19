@@ -4,6 +4,9 @@ const ytdlp = require("yt-dlp-exec");
 
 const app = express();
 
+// 🔥 IMPORTANT FOR DEPLOY
+const PORT = process.env.PORT || 3000;
+
 const publicPath = path.join(__dirname, "public");
 
 app.use(express.static(publicPath));
@@ -14,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 
-// 🎬 VIDEO DOWNLOAD (FINAL FIX - NO BLACK SCREEN)
+// 🎬 VIDEO DOWNLOAD (NO BLACK SCREEN - MP4)
 app.get("/download", async (req, res) => {
   const url = req.query.url;
 
@@ -71,8 +74,6 @@ app.get("/info", async (req, res) => {
   try {
     const data = await ytdlp(url, {
       dumpSingleJson: true,
-      noWarnings: true,
-      noCallHome: true,
     });
 
     res.json({
@@ -87,6 +88,7 @@ app.get("/info", async (req, res) => {
 });
 
 
-app.listen(3000, () => {
-  console.log("🔥 FINAL PRO SERVER RUNNING: http://localhost:3000");
+// 🚀 SERVER START
+app.listen(PORT, () => {
+  console.log(`🔥 LIVE SERVER RUNNING ON PORT ${PORT}`);
 });
